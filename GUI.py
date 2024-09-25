@@ -1,19 +1,25 @@
 import tkinter as tk
 root = tk.Tk()
-#root.geometry('800x500')
+root.geometry('550x400')
 root.title('Python GUI')
+root.resizable(False, False)
 
-firstButton = tk.Button(root, text='Click Me')
-firstButton.grid(pady=20)
+def on_click():
+    label.config(text="Button clicked!")
 
-label = tk.Label(root, text='Hello World!', font=('Helvetica', 18))
-label.grid(padx=20, pady=20)
+
+firstButton = tk.Button(root, text='Click Me', command=on_click)
+firstButton.pack(pady=20)
+
+label = tk.Label(root, font=('Helvetica', 18))
+label.pack(padx=20, pady=20)
 
 textbox = tk.Text(root, font=('Arial', 16), height=5, width=40)
-textbox.grid(padx=20, pady=20)
+textbox.pack(padx=20, pady=20)
 
 myEntry = tk.Entry(root)
-myEntry.grid(pady=20)
+myEntry.pack(pady=20)
+
 
 
 root.mainloop()
